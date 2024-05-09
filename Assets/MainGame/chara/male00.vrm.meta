@@ -1,0 +1,227 @@
+fileFormatVersion: 2
+guid: 5d7551f7b479c7845b52fafb06bbf06a
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: N00_000_00_Body_00_SKIN (Instance)
+    second: {fileID: 2100000, guid: 7bcf741d9d7eab34da19b51dd1f036d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: N00_000_00_EyeHighlight_00_EYE (Instance)
+    second: {fileID: 2100000, guid: bfb6cca2ce8cf2546bda134b79ce05e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: N00_000_00_EyeIris_00_EYE (Instance)
+    second: {fileID: 2100000, guid: 9e7a0c1374fb57540bd1f4c670c3e56c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: N00_000_00_EyeWhite_00_EYE (Instance)
+    second: {fileID: 2100000, guid: 8f2e5cd324c19dd46bf88309366f2a3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: N00_000_00_FaceBrow_00_FACE (Instance)
+    second: {fileID: 2100000, guid: 284b7fec2bcaa7e4d8e3634313b89853, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: N00_000_00_FaceEyeline_00_FACE (Instance)
+    second: {fileID: 2100000, guid: 5864c68ebb0848b469175a831b3c3f7c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: N00_000_00_FaceMouth_00_FACE (Instance)
+    second: {fileID: 2100000, guid: 5ea241205d8100947bfb62a3d5d5b3eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: N00_000_00_Face_00_SKIN (Instance)
+    second: {fileID: 2100000, guid: ae3f665254a74594e85f8b34832ff9f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: N00_000_00_HairBack_00_HAIR (Instance)
+    second: {fileID: 2100000, guid: 09f8b5e5ec49ee64d9337cd615479215, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: N00_000_Hair_00_HAIR (Instance)
+    second: {fileID: 2100000, guid: 13565722d2131f0479e09ba09f84fd6c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: N00_001_02_Bottoms_01_CLOTH (Instance)
+    second: {fileID: 2100000, guid: e6e5aa2701856f347af1d500db69b2bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: N00_007_01_Tops_01_CLOTH_01 (Instance)
+    second: {fileID: 2100000, guid: 19a4ab90398bb7743a3eecf050f1c8c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: N00_007_01_Tops_01_CLOTH_02 (Instance)
+    second: {fileID: 2100000, guid: 6109814dbf4d9c1429ad232aa97ae897, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: N00_007_01_Tops_01_CLOTH_03 (Instance)
+    second: {fileID: 2100000, guid: 1db94ad0aca1cb54f81f46d0855e7d59, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: N00_007_01_Tops_01_CLOTH_04 (Instance)
+    second: {fileID: 2100000, guid: be730daf586e57441ad3fa5629ced6c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: N00_008_01_Shoes_01_CLOTH (Instance)
+    second: {fileID: 2100000, guid: bb747de70c741424fadd7733a8cf59c7, type: 2}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: MatcapWarp_01
+    second: {fileID: 2800000, guid: aa9bc130b620aec459faacdf83d05a59, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: MatcapWarp_02
+    second: {fileID: 2800000, guid: e4b7d531b3a92144fa6fec10173e0aef, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: N00_000_00_Face_00_out.linear
+    second: {fileID: 2800000, guid: 6a2b0ecb6b796e1459f0ec4362e00e12, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: N00_000_00_HairBack_00_nml.normal
+    second: {fileID: 2800000, guid: 0943a9789d54fcd4791e065cb352d07a, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: N00_000_Hair_00_nml.normal
+    second: {fileID: 2800000, guid: 0eb55b8989db995448a759291605697a, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: Shader_NoneBlack
+    second: {fileID: 2800000, guid: d590de90177258b4e97e1391bea1ad3c, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: Shader_NoneNormal.normal
+    second: {fileID: 2800000, guid: c64ae6656da4c56449677f6970682d7f, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: _01
+    second: {fileID: 2800000, guid: 80490110faa7b2e429ca33b6fa129ec2, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: _02
+    second: {fileID: 2800000, guid: 9398bdbaaecb37843849ceedb7299c87, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: _03
+    second: {fileID: 2800000, guid: 80147ad6ca429fe4f8491925b5aa2be2, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: _04
+    second: {fileID: 2800000, guid: 1dd5b427197b8854c9640d69d7820341, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: _05.normal
+    second: {fileID: 2800000, guid: 7ba0d2eda96d7274e8e487e2548079f7, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: _06
+    second: {fileID: 2800000, guid: 31bb4fe74c27245438c21421260b658b, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: _07
+    second: {fileID: 2800000, guid: 754f427a1517e304ea582bc67c2de09e, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: _09
+    second: {fileID: 2800000, guid: a16a48c989e09e64cbf8268dba16e14c, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: _10
+    second: {fileID: 2800000, guid: f39f4ec73b0383b4d820034459707869, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: _11.normal
+    second: {fileID: 2800000, guid: 0554bb8c6f54eab4a9ac3b991c7ccd07, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: _12
+    second: {fileID: 2800000, guid: e047616daa95a5544a6ee01eb34eb1a7, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: _13
+    second: {fileID: 2800000, guid: c08a789d78b71ff4598047915ba21ae2, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: _14
+    second: {fileID: 2800000, guid: 5170fc47e6beb5a448f69cd1ffc5d870, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: _15
+    second: {fileID: 2800000, guid: edc545a55b7cd6a4287f329a57ea3c3c, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: _16
+    second: {fileID: 2800000, guid: 9ca04cd43b01e1f45a06fbcb8ab9b99e, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: _17
+    second: {fileID: 2800000, guid: cf8228d381e1255499b25e21bc237774, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: _18
+    second: {fileID: 2800000, guid: 12d251fde3b70b8429ee4d3a36492793, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: _19
+    second: {fileID: 2800000, guid: f266351912e4f1d449a043a4656bcaec, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: _20
+    second: {fileID: 2800000, guid: 6ba68a8683794c345b3d6e992028b65d, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: thumbnail__VRM10
+    second: {fileID: 2800000, guid: 658c00b50acb9c545bd06b8659625822, type: 3}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: f66ead3390398f443aa127b741826ad9, type: 3}
+  MigrateToVrm1: 0
+  RenderPipeline: 0
