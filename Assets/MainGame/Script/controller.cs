@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class controller : MonoBehaviour
 {
@@ -9,8 +11,17 @@ public class controller : MonoBehaviour
     public float PlayerMovePower=0;
     Animator animator;
 
-
+    [SerializeField] GameObject ArcanaLowerLeft;
+    [SerializeField] GameObject ArcanaUpperLeft;
+    [SerializeField] GameObject ArcanaLowerRight;
+    [SerializeField] GameObject ArcanaUpperRight;
     UnityEngine.Quaternion targetRotation;
+    public VisualEffect Effect;
+    private float CoolTime = 0;
+    public float CoolTimeNum;
+    public bool IsAttackFlg=true;
+
+    public GameObject bullet;
     void Awake()
     {
         //コンポーネント関連付け
@@ -45,10 +56,27 @@ public class controller : MonoBehaviour
         {
             if(Input.GetMouseButtonDown(0))//左クリック
             {
-               
+                ArcanaUpperLeft.gameObject.transform.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+                ArcanaUpperLeft.gameObject.transform.GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.red);
+                if(IsAttackFlg)
+                {
+                    Effect.SendEvent("StartEffect");
+                    IsAttackFlg=false;
+                }
+               // Effect.GetGradient("")
+                
+            }
+            if (Input.GetMouseButtonDown(1))//右クリック
+            {
+
             }
 
-            if (Input.GetMouseButtonDown(1))//右クリック
+            if(Input.GetKeyDown(KeyCode.Q))//Q Key Down
+            {
+
+            }
+
+            if(Input.GetKeyDown(KeyCode.E))//E Key Down
             {
 
             }
@@ -59,6 +87,15 @@ public class controller : MonoBehaviour
             {
                 animator.SetTrigger("Rolling");
             }
+        }
+        if(!IsAttackFlg)
+        {
+            CoolTime += Time.deltaTime;
+        }
+        if(CoolTime>=CoolTimeNum)
+        {
+            IsAttackFlg = true;
+            CoolTime = 0;
         }
 
     }
