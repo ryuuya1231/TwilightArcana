@@ -56,12 +56,22 @@ public class controller : MonoBehaviour
         {
             if(Input.GetMouseButtonDown(0))//ç∂ÉNÉäÉbÉN
             {
-                ArcanaUpperLeft.gameObject.transform.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-                ArcanaUpperLeft.gameObject.transform.GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.red);
                 if(IsAttackFlg)
                 {
-                    Effect.SendEvent("StartEffect");
-                    IsAttackFlg=false;
+                    bullet.transform.position = transform.position;
+                    //Rigidbody rb=bullet.GetComponent<Rigidbody>();
+                    //rb.velocity = velocity;
+                    //Effect.SendEvent("StartEffect");
+                    // íeä€ÇÃï°êª
+                    GameObject bullets = Instantiate(bullet) as GameObject;
+
+                    UnityEngine.Vector3 force;
+
+                    force = this.gameObject.transform.forward * 1000;
+
+                    // RigidbodyÇ…óÕÇâ¡Ç¶Çƒî≠éÀ
+                    bullets.GetComponent<Rigidbody>().AddForce(force);
+                    IsAttackFlg =false;
                 }
                // Effect.GetGradient("")
                 
