@@ -3,6 +3,7 @@ using UnityEngine;
 public class RaycastTester : MonoBehaviour
 {
     [SerializeField] GameObject player;
+    [SerializeField] GameObject startObj;
     private float CoolTime = 0;
     public float CoolTimeNum;
     public bool IsAttackFlg = true;
@@ -14,8 +15,8 @@ public class RaycastTester : MonoBehaviour
             {
                 IsAttackFlg = false;
             
-                var startpos = player.transform.position;
-                var raydir = player.transform.forward.normalized;
+                var startpos = startObj.transform.position;
+                var raydir = startObj.transform.forward.normalized;
                 Debug.DrawRay(startpos, raydir * 30.0f, Color.red);
                 RaycastHit hit;
                 var isHit = Physics.Raycast(startpos, raydir, out hit, 30f);
@@ -23,7 +24,8 @@ public class RaycastTester : MonoBehaviour
                 if (isHit && hit.collider.CompareTag("Enemy"))
                 {
                     //Destroy(hit.collider.gameObject);
-                    hit.collider.GetComponent<Enemy>().Damege();
+                    //hit.collider.GetComponent<Enemy>().Damage();
+                    player.GetComponent<PlayerAttacker>().HitTrigger(hit.collider);
 
                 }
                 else
