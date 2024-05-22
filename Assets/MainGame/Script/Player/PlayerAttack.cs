@@ -18,4 +18,6 @@ public class PlayerAttacker : MonoBehaviour
             damageable.Damage(data.ATK);
         }
     }
+
+    
 }

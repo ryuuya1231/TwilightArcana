@@ -58,7 +58,7 @@ public class controller : MonoBehaviour
             {
                 if(IsAttackFlg)
                 {
-                    Effect.SendEvent("StartEffect");
+                    GameObject arrow= Instantiate(bullet) as GameObject;
                     IsAttackFlg =false;
                 }
                // Effect.GetGradient("")
