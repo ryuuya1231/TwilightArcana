@@ -21,14 +21,14 @@ public class Enemy : MonoBehaviour, IDamageable
         TryGetComponent(out animator);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag=="Attack")
-        {
-            Debug.Log("Hit");
-           // Debug.Log("Hit");
-        }
-    }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.tag=="Attack")
+    //    {
+    //        Debug.Log("!Attack!Hit");
+    //       // Debug.Log("Hit");
+    //    }
+    //}
 
     public void Damage(int value)
     {
