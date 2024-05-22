@@ -58,19 +58,7 @@ public class controller : MonoBehaviour
             {
                 if(IsAttackFlg)
                 {
-                    bullet.transform.position = transform.position;
-                    //Rigidbody rb=bullet.GetComponent<Rigidbody>();
-                    //rb.velocity = velocity;
-                    //Effect.SendEvent("StartEffect");
-                    // íeä€ÇÃï°êª
-                    GameObject bullets = Instantiate(bullet) as GameObject;
-
-                    UnityEngine.Vector3 force;
-
-                    force = this.gameObject.transform.forward * 1000;
-
-                    // RigidbodyÇ…óÕÇâ¡Ç¶Çƒî≠éÀ
-                    bullets.GetComponent<Rigidbody>().AddForce(force);
+                    Effect.SendEvent("StartEffect");
                     IsAttackFlg =false;
                 }
                // Effect.GetGradient("")
