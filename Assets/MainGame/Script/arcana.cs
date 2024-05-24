@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.VFX;
+using DG.Tweening;
 
 public class arcana : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class arcana : MonoBehaviour
     Vector3 velocity;
     Vector3 acceleration;
     Transform thisTransform;
-
+    bool FirstFlg=false;
     public Transform Target
     {
         set{ target = value;}
@@ -28,19 +29,28 @@ public class arcana : MonoBehaviour
 
     void Start()
     {
+       FirstFlg = false;
+    }
+    void Init()
+    {
         Player = GameObject.FindGameObjectWithTag("Player");
         target = GameObject.FindGameObjectWithTag("EnemyTarget").transform;
         thisTransform = transform;
         position = Player.transform.position + new Vector3(0, 3, 0);
         thisTransform = transform;
         velocity = new Vector3(Random.Range(minInitVelocity.x, maxInitVelocity.x), Random.Range(minInitVelocity.y, maxInitVelocity.y), Random.Range(minInitVelocity.z, maxInitVelocity.z));
-
+        //Quaternion randomRotation = Quaternion.Euler(0, Random.Range(-45, 45), 0);
+        //velocity = randomRotation * new Vector3(Random.Range(minInitVelocity.x, maxInitVelocity.x), Random.Range(minInitVelocity.y, maxInitVelocity.y), Random.Range(minInitVelocity.z, maxInitVelocity.z));
         StartCoroutine(nameof(Timer));
         Effect.SendEvent("StartEffect");
+        FirstFlg = true;
     }
-    
     public void Update()
     {
+        if (!FirstFlg)
+        {
+            Init();
+        }
         if (target == null)
         {
             return;
@@ -60,13 +70,13 @@ public class arcana : MonoBehaviour
         {
             return;
         }
-
+        Quaternion randomRotation = Quaternion.Euler(0, Random.Range(-45, 45), 0);
         velocity += acceleration * Time.deltaTime;
         position += velocity * Time.deltaTime;
         thisTransform.position = position;
         thisTransform.rotation = Quaternion.LookRotation(velocity);
 
-        
+        thisTransform.Rotate(0, 0, 100);
 
     }
     private void OnCollisionEnter(Collision collision)
