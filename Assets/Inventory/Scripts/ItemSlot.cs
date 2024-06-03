@@ -26,10 +26,8 @@ namespace FlMr_Inventory
         /// <param name="number"></param>
         internal void UpdateItem(ItemBase item, int number)
         {
-            Debug.Log("!!");
             if (number > 0 && item != null)
             {
-                Debug.Log("アイテムをスロットに入れます");
                 // アイテムが空ではない場合
                 Item = item;
                 icon.sprite = item.Icon;
@@ -46,7 +44,6 @@ namespace FlMr_Inventory
             }
             else
             {
-                Debug.Log("アイテムがスロットにない");
                 Item = null;
                 Number = 0;
                 icon.sprite = null;
@@ -114,7 +111,6 @@ namespace FlMr_Inventory
                     {
                         var bag = GameObject.FindGameObjectWithTag("ItemBag").GetComponent<ItemBag>();
                         var s_slot = GameObject.FindGameObjectWithTag("SelectSlot").GetComponent<SelectItemSlot>();
-                        Debug.Log("空きスロットに" + s_slot.Item.name + "を入れます");
                         bag.AddItem(s_slot.Item.UniqueId, 1);
                         select.RemoveItem(s_slot.Item.UniqueId, 1);
                     }

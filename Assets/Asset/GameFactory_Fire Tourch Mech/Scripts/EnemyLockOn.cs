@@ -44,7 +44,7 @@ public class EnemyLockOn : MonoBehaviour
         defMovement.lockMovement = enemyLocked;
         if (Input.GetKeyDown(KeyCode.T))
         {
-            ResetTarget();
+            if (currentTarget) { ResetTarget(); return; }
             if (currentTarget = ScanNearBy()) FoundTarget(); else ResetTarget();
         }
 
@@ -59,6 +59,7 @@ public class EnemyLockOn : MonoBehaviour
 
     void FoundTarget()
     {
+        if (enemyLocked) return;
         lockOnCanvas.gameObject.SetActive(true);
         anim.SetLayerWeight(1, 1);
         cinemachineAnimator.Play("TargetCamera");
@@ -67,10 +68,12 @@ public class EnemyLockOn : MonoBehaviour
 
     void ResetTarget()
     {
+        if (!enemyLocked) return;
         lockOnCanvas.gameObject.SetActive(false);
         currentTarget = null;
         enemyLocked = false;
         anim.SetLayerWeight(1, 0);
+        camFollow.lockedTarget = false;
         cinemachineAnimator.Play("FollowCamera");
     }
 

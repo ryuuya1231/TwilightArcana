@@ -169,10 +169,8 @@ namespace FlMr_Inventory
         /// </summary>
         private void UpdateItem()
         {
-            Debug.Log("更新");
             for (int i = 0; i < Data.Ids.Count; ++i)
             {
-                Debug.Log("アイテム追加");
                 // 追加したいアイテムのid
                 int itemId = Data.Ids[i];
 
@@ -183,11 +181,9 @@ namespace FlMr_Inventory
             }
             for (int i = Data.Ids.Count; i < slotNumber; i++)
             {
-                Debug.Log("空きスロット生成");
                 // 残りは空
                 AllSlots[i].UpdateItem(null, -1);
             }
-            Debug.Log("更新終了");
         }
 
         /// <summary>
@@ -203,7 +199,6 @@ namespace FlMr_Inventory
 
             if (haveEnough)
             {
-                Debug.Log("アイテム削除");
                 // 十分持っている場合
                 Data.Remove(itemId, number);
 

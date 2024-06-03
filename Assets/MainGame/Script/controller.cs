@@ -53,12 +53,12 @@ public class controller : MonoBehaviour
         //ˆÚ“®‘¬“x‚ðanimator‚É‘ã“ü
         animator.SetFloat("Speed", velocity.magnitude * speed, 0.1f, Time.deltaTime);
         
-       
+        { 
             if(Input.GetKeyDown(KeyCode.Space))
             {
                 animator.SetTrigger("Rolling");
             }
-        
+        }
         if(!IsAttackFlg)
         {
             CoolTime += Time.deltaTime;

@@ -92,7 +92,6 @@ namespace FlMr_Inventory
                 int index = Ids.IndexOf(id);
                 if (index < 0)
                 {
-                    Debug.Log("アイテムを追加");
                     // 未所持のアイテムの場合は、スロットを1つ消費する
                     Ids.Add(id);
 
@@ -101,7 +100,6 @@ namespace FlMr_Inventory
                 }
                 else
                 {
-                    Debug.Log("所持数のみ追加");
                     // 既に所持しているアイテムの場合は、所持数のみを追加
                     Qty[index] += number;
                 }
@@ -138,7 +136,6 @@ namespace FlMr_Inventory
                             // 0個になった場合はリストから削除
                             Qty.RemoveAt(index);
                             Ids.RemoveAt(index);
-                            Debug.Log("削除");
                         }
                     }
                 }
@@ -171,26 +168,21 @@ namespace FlMr_Inventory
         /// </summary>
         private void UpdateItem()
         {
-            Debug.Log("更新");
             for (int i = 0; i < Data.Ids.Count; ++i)
             {
-                Debug.Log("アイテム追加");
                 // 追加したいアイテムのid
                 int itemId = Data.Ids[i];
-                
+
                 // 全アイテムからitemIdをもつアイテムを検索する
                 ItemBase addingItem = ItemUtility.Instance.ItemIdTable[itemId];
                 // アイテムを表示
                 AllSlots[i].UpdateItem(addingItem, Data.Qty[i]);
-                Debug.Log(addingItem.name);
             }
             for (int i = Data.Ids.Count; i < slotNumber; i++)
             {
-                Debug.Log("空きスロット生成");
                 // 残りは空
                 AllSlots[i].UpdateItem(null, -1);
             }
-            Debug.Log("更新終了");
         }
         /// <summary>
         /// アイテムを削除する
@@ -205,7 +197,6 @@ namespace FlMr_Inventory
 
             if (haveEnough)
             {
-                Debug.Log("アイテム削除");
                 // 十分持っている場合
                 Data.Remove(itemId, number);
 

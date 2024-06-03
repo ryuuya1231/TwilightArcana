@@ -16,7 +16,7 @@ namespace FlMr_Inventory
             {
                 if (instance == null)
                 {
-                    var instances = Resources.LoadAll<ItemUtility>("");
+                    ItemUtility[] instances = Resources.LoadAll<ItemUtility>("");
 
                     // シングルトンなクラスのインスタンスは必ず1つでなければならない
                     instance = instances.Count() switch
@@ -53,20 +53,13 @@ namespace FlMr_Inventory
         private void Initialize()
         {
             // ItemIdTableの初期化
-
             Dictionary<int, ItemBase> idItemMap = new Dictionary<int, ItemBase>();
             foreach (var item in allItems)
             {
-                Debug.Log("AllItemsの初期化");
                 idItemMap.Add(item.UniqueId, item);
             }
             ItemIdTable = new(idItemMap);
-
-
-
-
             // AllItemsの初期化
-            Debug.Log("AllItemsの初期化");
             AllItems = new(allItems);
         }
     }
