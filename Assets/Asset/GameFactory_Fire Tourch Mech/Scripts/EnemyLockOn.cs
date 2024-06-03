@@ -42,7 +42,7 @@ public class EnemyLockOn : MonoBehaviour
     {
         camFollow.lockedTarget = enemyLocked;
         defMovement.lockMovement = enemyLocked;
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.Mouse2))
         {
             if (currentTarget) { ResetTarget(); return; }
             if (currentTarget = ScanNearBy()) FoundTarget(); else ResetTarget();
