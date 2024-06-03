@@ -135,13 +135,10 @@ namespace FlMr_Inventory
         /// スロットの表示と所持アイテムの情報を一致させる
         private void UpdateItem()
         {
-            Debug.Log("更新");
             for (int i = 0; i < Data.Ids.Count; ++i)
             {
-                Debug.Log("アイテム追加");
                 // 追加したいアイテムのid
                 int itemId = Data.Ids[i];
-                Debug.Log(i);
                 // 全アイテムからitemIdをもつアイテムを検索する
                 ItemBase addingItem = ItemUtility.Instance.ItemIdTable[itemId];
                 // アイテムを表示
@@ -153,7 +150,6 @@ namespace FlMr_Inventory
                 // 残りは空
                 AllSlots[i].UpdateItem(null, -1);
             }
-            Debug.Log("更新終了");
         }
         /// アイテムを削除する
         /// <param name="itemId">削除するアイテムのId</param>
@@ -181,16 +177,6 @@ namespace FlMr_Inventory
         {
             return Data.Ids
                 .ToDictionary(id => ItemUtility.Instance.ItemIdTable[id], id => Data.GetQty(id));
-            /***** Linqを使わない記述 ******
-            Dictionary<ItemBase, int> result = new Dictionary<ItemBase, int>();
-            foreach (var id in Data.Ids)
-            {
-                ItemBase item = ItemUtility.Instance.ItemIdTable[id];
-                result.Add(item,Data.GetQty(id));
-            }
-            return result;
-            *****************************/
-
         }
 
         /// idを指定して個数を取得

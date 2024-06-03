@@ -25,10 +25,8 @@ namespace FlMr_Inventory
         /// <param name="number"></param>
         internal void UpdateItem(ItemBase item, int number)
         {
-            Debug.Log("!!");
             if (number > 0 && item != null)
             {
-                Debug.Log("アイテムをスロットに入れます");
                 // アイテムが空ではない場合
                 Item = item;
                 icon.sprite = item.Icon;
@@ -45,7 +43,6 @@ namespace FlMr_Inventory
             }
             else
             {
-                Debug.Log("スロットがすべて埋まっています");
                 Item = null;
                 Number = 0;
                 icon.sprite = null;

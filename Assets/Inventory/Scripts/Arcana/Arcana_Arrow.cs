@@ -13,7 +13,7 @@ public class Arcana_Arrow : ItemBase
 
     public void Use()
     {
-        Debug.Log("ƒvƒŒƒCƒ„[‚©‚ç‹ß‚¢‚É‘Î‚µ‚Ä–î‚ğ”ò‚Î‚·");
+        Debug.Log("–î‚ğ”ò‚Î‚µ‚Ü‚·");
     }
 
     // Start is called before the first frame update
