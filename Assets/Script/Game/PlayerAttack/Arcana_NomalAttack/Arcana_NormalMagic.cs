@@ -8,7 +8,7 @@ public class Arcana_NormalMagic : ArcanaBase
 {
     public override void ArcanaEffect()
     {
-        var _player = GameObject.FindGameObjectWithTag("Player").transform.Find("male00");
+        var _player = GameObject.FindGameObjectWithTag("Player");
         if (_player == null)
         {
             Debug.Log("ÉvÉåÉCÉÑÅ[Ç™Ç¢Ç‹ÇπÇÒ");
@@ -26,7 +26,7 @@ public class Arcana_NormalMagic : ArcanaBase
 
     private void SetUp()
     {
-        var _player = GameObject.FindGameObjectWithTag("Player").transform.Find("male00");
+        var _player = GameObject.FindGameObjectWithTag("Player");
         _rb = _prefab.GetComponent<Rigidbody>();
         GameObject enemy = GameObject.FindWithTag("Enemy");
         if (enemy)

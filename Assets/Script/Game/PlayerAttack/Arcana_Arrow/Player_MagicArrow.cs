@@ -18,6 +18,8 @@ public class Player_MagicArrow : MonoBehaviour
     Vector3 velocity;
     Vector3 acceleration;
     Transform thisTransform;
+    [SerializeField] float trackingRadius = 10.0f;
+    //float targetTime = 1;
     public Transform Target
     {
         set { target = value; }
@@ -30,17 +32,19 @@ public class Player_MagicArrow : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Player");
         target = GameObject.FindGameObjectWithTag("EnemyTarget").transform;
         thisTransform = transform;
-        position = Player.transform.position + new Vector3(0, 3, 0);
+        position = Player.transform.position + new Vector3(0, 2, 0);
         thisTransform = transform;
         velocity = new Vector3(Random.Range(minInitVelocity.x, maxInitVelocity.x), Random.Range(minInitVelocity.y, maxInitVelocity.y), Random.Range(minInitVelocity.z, maxInitVelocity.z));
-        //Quaternion randomRotation = Quaternion.Euler(0, Random.Range(-45, 45), 0);
-        //velocity = randomRotation * new Vector3(Random.Range(minInitVelocity.x, maxInitVelocity.x), Random.Range(minInitVelocity.y, maxInitVelocity.y), Random.Range(minInitVelocity.z, maxInitVelocity.z));
         StartCoroutine(nameof(Timer));
         Effect.SendEvent("StartEffect");
     }
     public void Update()
     {
-        if (target == null){return;}
+        //if (target == null){return;}
+        //if ((target.position - position).sqrMagnitude > trackingRadius * trackingRadius)
+        //{
+        //    return;
+        //}
 
 
         acceleration = 2f / (time * time) * (target.position - position - time * velocity);
@@ -82,6 +86,19 @@ public class Player_MagicArrow : MonoBehaviour
         yield return new WaitForSeconds(lifeTime);
 
         Destroy(gameObject);
+    }
+
+    public void TargetRange()
+    {
+        if (target == null)
+
+        target = GameObject.FindGameObjectWithTag("EnemyTarget").transform;
+        if ((target.position - position).sqrMagnitude > trackingRadius * trackingRadius)
+        {
+
+            return;
+        }
+
     }
 
 }

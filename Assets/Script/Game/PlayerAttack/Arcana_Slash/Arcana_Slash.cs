@@ -9,7 +9,7 @@ public class Arcana_Slash : ArcanaBase
     public override void ArcanaEffect()
     {
         _prefab = Resources.Load<GameObject>("Slash/Stone slash");
-        _pos = GameObject.FindGameObjectWithTag("Player").transform.position + new Vector3(0, 2.5f, 0);
+        _pos = GameObject.FindGameObjectWithTag("Player").transform.position + new Vector3(0.0f, 2.5f, 0.0f);
         Quaternion PlayerRot = GameObject.FindGameObjectWithTag("Player").transform.rotation;
 
 
