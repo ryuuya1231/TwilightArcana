@@ -53,7 +53,6 @@ public class EnemyLockOn : MonoBehaviour
             if (!TargetOnRange()) ResetTarget();
             LookAtTarget();
         }
-
     }
 
 
