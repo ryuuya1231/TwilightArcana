@@ -4,9 +4,6 @@ using System.Numerics;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using UnityEngine.VFX;
-using Effekseer;
-using DG.Tweening;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class controller : MonoBehaviour
 {
@@ -56,38 +53,6 @@ public class controller : MonoBehaviour
         //移動速度をanimatorに代入
         animator.SetFloat("Speed", velocity.magnitude * speed, 0.1f, Time.deltaTime);
         
-        {
-            if(Input.GetMouseButtonDown(0))//左クリック
-            {
-                if(IsAttackFlg)
-                {
-                    GameObject arrow = Instantiate(bullet) as GameObject;
-                    IsAttackFlg =false;
-                }
-               // Effect.GetGradient("")
-                
-            }
-            if (Input.GetMouseButtonDown(1))//右クリック
-            {
-                EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("Sword_Ember");
-                EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, transform.position);
-                UnityEngine.Quaternion rotate = transform.rotation;
-                handle.SetRotation(rotate);
-                float scale = 0.5f;
-                handle.SetScale(new UnityEngine.Vector3(scale,scale,scale));
-            }
-
-            if(Input.GetKeyDown(KeyCode.Q))//Q Key Down
-            {
-
-            }
-
-            if(Input.GetKeyDown(KeyCode.E))//E Key Down
-            {
-
-            }
-
-        }
         { 
             if(Input.GetKeyDown(KeyCode.Space))
             {

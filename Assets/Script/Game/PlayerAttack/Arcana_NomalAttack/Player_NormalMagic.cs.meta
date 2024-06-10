@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 32b1eb9e7b444964b85a1219636205b4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _arcana: {fileID: -163234038878449474, guid: 049ce32c5fbffd14e828ce6b63cca50e,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
