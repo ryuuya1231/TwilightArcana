@@ -32,7 +32,7 @@ public class CameraFollow : MonoBehaviour
 
 
         if (!lockedTarget) CameraTargetRotation(); else LookAtTarget();
-        
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Cursor.visible = true;
