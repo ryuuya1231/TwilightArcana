@@ -148,13 +148,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  target: {fileID: 0}
-  time: 1
-  lifeTime: 2
-  limitAcceleration: 1
-  maxAcceleration: 100
+  targetDirection: {x: 0, y: 0, z: 0}
+  time: 1.5
+  lifeTime: 1.5
+  limitAcceleration: 0
+  maxAcceleration: 0
   minInitVelocity: {x: 0, y: 0, z: 0}
-  maxInitVelocity: {x: 0, y: 0.001, z: 0}
+  maxInitVelocity: {x: 0, y: 0, z: 0}
   Effect: {fileID: -169904664323647759, guid: 6e5469bf18fde42479459917ddfbde67, type: 3}
   trackingRadius: 10
 --- !u!54 &-3055065557088325264

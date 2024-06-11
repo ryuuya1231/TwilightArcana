@@ -29,11 +29,22 @@ public class controller : MonoBehaviour
 
         targetRotation = transform.rotation;
         Cursor.lockState = CursorLockMode.Locked;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        // 現在のアニメーションステートを取得
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        Debug.Log("Rolling animation state is playing.");
+        // アニメーションステートが"Rolling"かどうかを確認
+        if (stateInfo.IsName("Rolling"))
+        {
+            // "Rolling"のアニメーションステートであればログに出力
+           
+        }
         //入力ベクトルの取得
         var horizontal = Input.GetAxis("Horizontal");
         var vertical = Input.GetAxis("Vertical");
@@ -53,8 +64,13 @@ public class controller : MonoBehaviour
         //移動速度をanimatorに代入
         animator.SetFloat("Speed", velocity.magnitude * speed, 0.1f, Time.deltaTime);
         
-        { 
-            if(Input.GetKeyDown(KeyCode.Space))
+        {
+            if (Input.GetKeyUp(KeyCode.Q) || Input.GetKeyUp(KeyCode.E) || Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                speed = 1;
+                animator.SetFloat("Speed", speed);
+            }
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 animator.SetTrigger("Rolling");
             }
@@ -68,7 +84,18 @@ public class controller : MonoBehaviour
             IsAttackFlg = true;
             CoolTime = 0;
         }
-
+        if (animator.GetCurrentAnimatorStateInfo(0).IsTag("invincible"))
+        {
+            Debug.Log("Rolling");
+        }
+        if(animator.GetCurrentAnimatorStateInfo(0).IsName("Locomotion"))
+        {
+            Debug.Log("Rolling");
+        }
+        //無敵処理
+        {
+            
+        }
     }
 
     public int AttackType
