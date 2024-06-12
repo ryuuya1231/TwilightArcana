@@ -15,6 +15,7 @@ MonoBehaviour:
   uniqueId: 5
   itemName: Turret
   icon: {fileID: 21300000, guid: 113d994f4a0e3b34db447fc9c734c9ae, type: 3}
-  description: Turret
+  description: "\u30BF\u30EC\u30C3\u30C8\u3092\u751F\u6210"
   arcanaBase: {fileID: -5782153747566148220, guid: d1bf7703d59c07e4ba0fcc15d4173bb2,
     type: 3}
+  maxCoolTime: 15

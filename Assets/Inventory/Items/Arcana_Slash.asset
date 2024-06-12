@@ -15,6 +15,7 @@ MonoBehaviour:
   uniqueId: 6
   itemName: Slash
   icon: {fileID: 21300000, guid: c1f16b99e1e8b9b489ffee5a8317eb5e, type: 3}
-  description: slash
+  description: "\u76EE\u306E\u524D\u306B\u4E8C\u9023\u6483"
   arcanaBase: {fileID: -6757941988772190780, guid: 1915d2fe02b70d3498c868c82a6dc809,
     type: 3}
+  maxCoolTime: 2

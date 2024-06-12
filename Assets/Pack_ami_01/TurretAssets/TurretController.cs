@@ -52,7 +52,7 @@ public class TurretController : MonoBehaviour
         // デバッグログ: 検出された最も近い敵
         if (closestEnemy != null)
         {
-            Debug.Log("Detected closest enemy: " + closestEnemy.name);
+           // Debug.Log("Detected closest enemy: " + closestEnemy.name);
         }
 
         // 最も近い敵が範囲内にあり、発射レートの間隔が経過している場合に弾を発射
@@ -67,7 +67,7 @@ public class TurretController : MonoBehaviour
     void Shoot(Transform target)
     {
         // デバッグログ: 弾の発射
-        Debug.Log("Shooting at target: " + target.name);
+        //Debug.Log("Shooting at target: " + target.name);
 
         // 弾のインスタンスを生成して発射
         GameObject bullet = Instantiate(turretBulletPrefab, turretBulletSpawnPoint.position, turretBulletSpawnPoint.rotation);
