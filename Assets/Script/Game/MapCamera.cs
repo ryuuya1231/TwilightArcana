@@ -8,7 +8,8 @@ public class MapCamera : MonoBehaviour
     private Vector3 offset;
     void Start()
     {
-        player = GameObject.Find("male00");
+        //player = GameObject.Find("male00");
+        player= GameObject.FindGameObjectWithTag("Player");
         offset = transform.position - player.transform.position;
     }
 

@@ -10,7 +10,7 @@ public class Player_GreenSemicircle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        effect=GetComponent<VisualEffect>();
+        //effect=GetComponent<VisualEffect>();
         Debug.Log("GreenSemicircle");
     }
 
