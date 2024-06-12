@@ -8,7 +8,7 @@ using UnityEngine.AI;
 using UnityEngine.EventSystems;
 
 
-public class BossController : MonoBehaviour,IDamageable
+public class BossController : MonoBehaviour, IDamageable
 {
     //ボス本体
     [SerializeField]
@@ -58,9 +58,9 @@ public class BossController : MonoBehaviour,IDamageable
     [SerializeField]
     private float jumpPower = 10;
     [SerializeField]
-    private　float jumpTime = 1;
+    private float jumpTime = 1;
     [SerializeField]
-    private　float jumpInterval = 1;
+    private float jumpInterval = 1;
     [SerializeField]
     private float jumpDistance = 24;
 
@@ -85,9 +85,9 @@ public class BossController : MonoBehaviour,IDamageable
     private bool isDead = false;
     private bool isAttacking = false;
     private bool powerUp = false;
-    private bool attack=false;
-    private bool rash=false;
-    private bool jump=false;
+    private bool attack = false;
+    private bool rash = false;
+    private bool jump = false;
 
     //その他
     public int hp = 0;
@@ -108,7 +108,7 @@ public class BossController : MonoBehaviour,IDamageable
     private int effect_Dead = 4;
 
     //ノックバック
-    float knockBackPower=50;
+    float knockBackPower = 50;
     Rigidbody playerRigidbody;
 
     //のけぞりの回転角度
@@ -145,6 +145,11 @@ public class BossController : MonoBehaviour,IDamageable
         {
             return hp;
         }
+    }
+
+    public int MaxHp()
+    {
+        return maxHp;
     }
 
     void Start()
@@ -201,14 +206,14 @@ public class BossController : MonoBehaviour,IDamageable
             animator.SetFloat(MoveHash, 0);
             return;
         }
-        
+
         //攻撃時NaviMeshの停止
         if (isAttacking)
         { navmeshAgent.isStopped = true; }
         else
         { navmeshAgent.isStopped = false; }
 
-        
+
         //ボス当たり判定
         capsuleCollider.enabled = true;
 
@@ -232,7 +237,7 @@ public class BossController : MonoBehaviour,IDamageable
         CheckDistance();
         Move();
         UpdateAnimator();
-        
+
     }
     void InitBoss()
     {
@@ -241,9 +246,9 @@ public class BossController : MonoBehaviour,IDamageable
 
     public void Damage(int value)
     {
-        if (isDead) { return;}
+        if (isDead) { return; }
         //ボスダメージ処理
-        if (value <= 0){return;}
+        if (value <= 0) { return; }
         if (rash) { return; }
         Hp -= value;
         Debug.Log(Hp);
@@ -255,10 +260,10 @@ public class BossController : MonoBehaviour,IDamageable
         //ボス死亡時処理
         isDead = true;
         StopAttack();
-        capsuleCollider.enabled=false;
+        capsuleCollider.enabled = false;
         animator.speed = 1;
         navmeshAgent.isStopped = true;
-        animator.SetBool(DeadHash,true);
+        animator.SetBool(DeadHash, true);
         Destroy(powerEffect);
         StartCoroutine(nameof(DeadTimer));
     }
@@ -290,7 +295,7 @@ public class BossController : MonoBehaviour,IDamageable
 
     void CheckDistance()
     {
-        if (player.gameObject == null) {  return; }
+        if (player.gameObject == null) { return; }
         //ボスとプレイヤーの距離判定
         float diff = (player.transform.position - thisTransform.position).sqrMagnitude;
 
@@ -438,7 +443,7 @@ public class BossController : MonoBehaviour,IDamageable
                 rashPower *= 1.5f;
                 jumpPower *= 1.5f;
                 powerEffect = SpawnEffect(effect_SecondForm);
-                
+
                 powerUp = true;
             }
 
@@ -454,13 +459,13 @@ public class BossController : MonoBehaviour,IDamageable
             //第二形態用エフェクト処理
             if (powerEffect == null) { return; }
             powerEffect.transform.position = BasePoint.position;
-            
+
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        IDamageable damageable=other.GetComponent<IDamageable>();
+        IDamageable damageable = other.GetComponent<IDamageable>();
 
         if (other.gameObject.tag == "Player")
         {
@@ -502,7 +507,7 @@ public class BossController : MonoBehaviour,IDamageable
             playerRigidbody.AddForce(distination * knockBackPower, ForceMode.VelocityChange);
 
         }
-       
+
     }
 
     private void OnCollisionEnter(Collision other)
@@ -539,6 +544,11 @@ public class BossController : MonoBehaviour,IDamageable
         //エフェクト
         GameObject spawnedHit = Instantiate(hitEffects[effectNum]);
         return spawnedHit;
+    }
+
+    public void Protect()
+    {
+
     }
 }
 

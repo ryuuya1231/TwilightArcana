@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_SnowShield : MonoBehaviour
+public class Player_SnowShield : MonoBehaviour,IDamageable
 {
     [SerializeField] private ArcanaBase _arcana;
     Transform player = null;
@@ -12,6 +12,21 @@ public class Player_SnowShield : MonoBehaviour
     [SerializeField] private float rotateSpeed = 180f;
     //　ターゲットからの距離
     [SerializeField] private Vector3 distanceFromTarget = new Vector3(0.0f, 0.0f, 2.5f);
+
+    void IDamageable.Damage(int value)
+    {
+        
+    }
+
+    void IDamageable.Death()
+    {
+        
+    }
+
+    void IDamageable.Protect()
+    {
+        
+    }
 
     private void Update()
     {

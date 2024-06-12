@@ -7,6 +7,6 @@ public class SceneChange_Sound : MonoBehaviour
 {
     public void change_button()
     {
-        SceneManager.LoadScene("SoundSettingScene");
+        SceneManager.LoadScene("SoundScene");
     }
 }
