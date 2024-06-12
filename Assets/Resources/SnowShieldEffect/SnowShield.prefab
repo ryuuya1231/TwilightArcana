@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -4360316595263226860}
   m_Layer: 0
   m_Name: SnowShield
-  m_TagString: Untagged
+  m_TagString: Protect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

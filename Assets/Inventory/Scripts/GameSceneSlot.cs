@@ -8,6 +8,7 @@ namespace FlMr_Inventory
     internal class GameSceneSlot : MonoBehaviour
     {
         [SerializeField] private Image icon;
+        [SerializeField] private Image shutOut;
         /// <summary>
         /// このスロットに入っているアイテム
         /// </summary>
@@ -23,16 +24,12 @@ namespace FlMr_Inventory
             {
                 // アイテムが空ではない場合
                 Item = item;
-                icon.sprite = item.Icon;
-                icon.color = Color.white;
-
                 // アイコンの表示
                 icon.sprite = item.Icon;
                 icon.color = Color.white;
-
                 // 数量の表示
-                numberText.gameObject.SetActive(number > 1);
-                numberText.text = number.ToString();
+                //numberText.gameObject.SetActive(number > 1);
+                //numberText.text = number.ToString();
                 Number = number;
             }
             else
@@ -41,13 +38,12 @@ namespace FlMr_Inventory
                 Number = 0;
                 icon.sprite = null;
                 icon.color = new Color(0, 0, 0, 0);
-                numberText.gameObject.SetActive(false);
+                //numberText.gameObject.SetActive(false);
             }
         }
         /// <summary>
         /// このスロットに入っているアイテムの個数を表示するテキスト
         /// </summary>
-        [SerializeField] private TextMeshProUGUI numberText;
 
         /// <summary>
         /// 数量
@@ -85,5 +81,25 @@ namespace FlMr_Inventory
             }
         }
         //==============================================
+
+        private float coolTimeCount = 0;
+        private void Update()
+        {
+            if (Item == null) return;
+            if (!Item.GetActiveFlg())
+            {
+                shutOut.gameObject.SetActive(true);
+                coolTimeCount =Item.GetAdjustmentCooltime();
+                shutOut.rectTransform.sizeDelta =
+                    new Vector2
+                    (
+                        shutOut.rectTransform.rect.width, shutOut.rectTransform.rect.width - (coolTimeCount * 8)
+                        );
+            }
+            else
+            {
+                shutOut.gameObject.SetActive(false);
+            }
+        }
     }
 }

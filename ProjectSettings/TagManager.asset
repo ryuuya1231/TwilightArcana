@@ -9,6 +9,7 @@ TagManager:
   - EnemyTarget
   - PlayerHP
   - GameSceneArcanaInventory
+  - Protect
   layers:
   - Default
   - TransparentFX
