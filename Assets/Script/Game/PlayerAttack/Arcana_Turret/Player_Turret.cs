@@ -7,7 +7,7 @@ public class Player_Turret : MonoBehaviour
     [SerializeField] private ArcanaBase _arcana;
     Transform player = null;
     //　ターゲットからの距離
-    [SerializeField] private Vector3 distanceFromTarget = new Vector3(0.0f, 0.0f, 2.5f);
+    [SerializeField] private Vector3 distanceFromTarget = new Vector3(0.0f, 3.0f, 2.5f);
     private void Update()
     {
         //if (_arcana.GetNormalEffect() == null) return;

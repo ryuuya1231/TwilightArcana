@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.VFX;
 
 public class InMove : MonoBehaviour, IDamageable
@@ -15,8 +16,8 @@ public class InMove : MonoBehaviour, IDamageable
     UnityEngine.Quaternion targetRotation;
     float inv = 1.5f;
     [SerializeField] CapsuleCollider coll;
-
-    [SerializeField] ParticleSystem HealingEffect;
+    //private GameObject[] hitEffects;
+    [SerializeField] GameObject HealingEffect;
     [SerializeField] int HealingCount=5;
     [SerializeField] int HealPower = 45;
 
@@ -107,7 +108,7 @@ public class InMove : MonoBehaviour, IDamageable
                     if (HealingCount >= 0)
                     {
                         animator.SetTrigger("Healing");
-                        
+                        Heal();
                         speed = 1;
                     }
                 }
@@ -132,7 +133,7 @@ public class InMove : MonoBehaviour, IDamageable
             inv = 0;
             coll.enabled = true;
         }
-        
+        DebugKey();
     }
     void FootR() 
     {
@@ -145,10 +146,11 @@ public class InMove : MonoBehaviour, IDamageable
 
     public void Heal()
     {
-        //GameObject _prefab = Resources.Load<GameObject>("Slash/Stone slash");
-        //UnityEngine.Vector3 _pos = GameObject.FindGameObjectWithTag("Player").transform.position + new Vector3(0.0f, 2.5f, 0.0f);
-        //UnityEngine.Quaternion PlayerRot = GameObject.FindGameObjectWithTag("Player").transform.rotation;
-        //_normalEffect = Instantiate(_prefab, _pos, SlashRot);
+        //GameObject _prefab = Resources.Load<GameObject>("Prefabs/Healing");
+        UnityEngine.Vector3 _pos = GameObject.FindGameObjectWithTag("Player").transform.position;
+        UnityEngine.Quaternion PlayerRot = GameObject.FindGameObjectWithTag("Player").transform.rotation;
+        Instantiate(HealingEffect, _pos,PlayerRot);
+
     }
 
 
@@ -166,7 +168,20 @@ public class InMove : MonoBehaviour, IDamageable
     void Hit() { }
     void CallAnimationEnd() { }
 
+    private void DebugKey()
+    {
+        if(Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            SceneManager.LoadScene("BildScene");
 
+        }
+        //if (Input.GetKeyDown(KeyCode.Alpha4))
+        //{
+        //    SceneManager.LoadScene("TitleScene");
+
+
+        //}
+    }
 }
 //using UnityEngine;
 

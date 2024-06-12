@@ -7,7 +7,12 @@ public class TurretBulletController : MonoBehaviour
     public float bulletSpeed = 10f; // 弾の移動速度
     private Transform bulletTarget; // 弾のターゲット
     private Vector3 bulletStartPosition; // 発射位置
-
+    [SerializeField] float lifeTime = 1.0f;
+    [SerializeField] int IsDamage = 1;
+    private void Start()
+    {
+        StartCoroutine(nameof(Timer));
+    }
     // 弾のターゲットを設定するメソッド
     public void SetTarget(Transform target)
     {
@@ -30,9 +35,9 @@ public class TurretBulletController : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
+        Vector3 vec = bulletTarget.position+new UnityEngine.Vector3(0.0f, 4.0f, 0.0f);
         // ターゲットに向かう方向を計算
-        Vector3 direction = (bulletTarget.position - transform.position).normalized;
+        Vector3 direction = (vec - transform.position).normalized;
         float distanceThisFrame = bulletSpeed * Time.deltaTime;
 
         // ターゲットに到達した場合、ヒット処理を実行
@@ -64,9 +69,18 @@ public class TurretBulletController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
         if (collision.gameObject.tag == "Enemy")
         {
+            Debug.Log("!Enemy!Hit");
+            damageable.Damage((int)IsDamage);
             Destroy(gameObject);
         }
+    }
+    IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(lifeTime);
+
+        Destroy(gameObject);
     }
 }
