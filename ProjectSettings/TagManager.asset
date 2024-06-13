@@ -7,14 +7,17 @@ TagManager:
   - Attack
   - Enemy
   - EnemyTarget
+  - PlayerHP
+  - GameSceneArcanaInventory
+  - Protect
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
+  - Attack
   - 
   - SecVision
   - Enemy

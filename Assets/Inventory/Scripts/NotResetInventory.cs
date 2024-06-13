@@ -9,9 +9,18 @@ using UnityEngine.SceneManagement;
 
 public class NotResetInventory : MonoBehaviour
 {
-    void Awake()
+    private static NotResetInventory instance;
+    private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
     private void Update()
     {

@@ -10,7 +10,7 @@ public class PlayerUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        var player = GameObject.FindGameObjectWithTag("Player").GetComponent<InMove>();
         if (player)
         {
             Debug.Log("ÉvÉåÉCÉÑÅ[Ç∆åqÇ™ÇËÇ‹ÇµÇΩ");
@@ -22,7 +22,7 @@ public class PlayerUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        var player = GameObject.FindGameObjectWithTag("Player").GetComponent<InMove>();
         if (player)
         {
             if (PlayerHPBar)

@@ -151,6 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   a: {fileID: 1518232233151987118}
   particle: {fileID: 4577776539254710993}
+  IsDamage: 5
 --- !u!198 &4577776539254710993
 ParticleSystem:
   m_ObjectHideFlags: 0

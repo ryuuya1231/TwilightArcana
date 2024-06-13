@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
@@ -27,4 +28,9 @@ public class SoundManager : MonoBehaviour
 
     public float GetBgmVolume()
     { return audioSourceBGM.volume; }
+
+    public void SetPlayBGM(int bgmNumber)
+    {
+        audioSourceBGM.PlayOneShot(audioClipsBGM[bgmNumber]);
+    }
 }

@@ -14699,7 +14699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31cefc89b3a8f9443ae0982886076127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRadius: 10
+  detectionRadius: 25
   turretBulletPrefab: {fileID: 1403069028731009190, guid: 53b398a40be178a49a2cde29266ec62c,
     type: 3}
   turretBulletSpawnPoint: {fileID: 3906035978920974436}

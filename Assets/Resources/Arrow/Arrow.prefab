@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 6275207610738869371}
   - component: {fileID: 2831250089198005659}
   - component: {fileID: -3055065557088325264}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Arrow
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,7 +124,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -157,6 +157,7 @@ MonoBehaviour:
   maxInitVelocity: {x: 0, y: 0, z: 0}
   Effect: {fileID: -169904664323647759, guid: 6e5469bf18fde42479459917ddfbde67, type: 3}
   trackingRadius: 10
+  IsDamage: 10
 --- !u!54 &-3055065557088325264
 Rigidbody:
   m_ObjectHideFlags: 0
